@@ -1,0 +1,46 @@
+.serach-Flights{
+    background-color: white;
+    margin: 75px;
+}
+
+.serach-Flights-header{
+    flex-direction: column;
+    /* margin-top: 4rem; */
+    text-align: center;
+    background-color: crimson;
+    color: aliceblue;
+    height: 10rem;
+}
+
+.custom-card-body{
+    padding: 4rem;
+    margin-top: -55px;
+    margin-left: 280px;
+    margin-right: 280px;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    padding-left: 4rem;
+}
+
+
+.custom-grid{
+    padding: 4rem;
+    margin-top: 40px;
+    margin-left: 280px;
+    margin-right: 280px;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    padding-left: 4rem;
+}
+
+.serach-flights-btn{
+    margin-top: 18px;
+    /* align-items: center; */
+    margin-inline: 28rem;
+    margin-bottom: -2rem;
+    width:18% !important;
+}
+
+.custom-datepicker{
+    display: inline-grid !important;
+}
