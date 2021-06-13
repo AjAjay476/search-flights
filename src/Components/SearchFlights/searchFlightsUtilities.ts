@@ -52,16 +52,16 @@ export function getAvailableAirlanes(compnentInstance: any): any {
  */
 export function filterFlights(compnentInstance: any, NotificationManager:any): void{
   if (!compnentInstance.state.selectedFromLocation)
-    return showInfoMsg('Please Select From Location');  
+    return showInfoMsg('Please Select From Location', compnentInstance);  
 
   if (!compnentInstance.state.selectedToLocation)
-    return showInfoMsg('Please Select To Location');  
+    return showInfoMsg('Please Select To Location', compnentInstance);  
 
   if (compnentInstance.state.selectedFromLocation.value == compnentInstance.state.selectedToLocation.value)
-    return showInfoMsg('From Location and To Location must be Different');  
+    return showInfoMsg('From Location and To Location must be Different', compnentInstance);  
 
   if(!compnentInstance.state.departureDate)
-      return showInfoMsg('Please Select Departure Date');  
+      return showInfoMsg('Please Select Departure Date', compnentInstance);  
 
   if(compnentInstance.flightsJSON.data)
   {
@@ -74,8 +74,9 @@ export function filterFlights(compnentInstance: any, NotificationManager:any): v
     }));
   }
 
-  function showInfoMsg(msg:string){
+  function showInfoMsg(msg:string, compnentInstance:any){
     NotificationManager.info('', msg, 3000, () => { });
+    compnentInstance.gridParams.api.setRowData([]);
   }
 } 
 
