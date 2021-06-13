@@ -33,7 +33,6 @@ export default class SearchFlights extends Component {
     }
     this.flightsJSON = flightsJSON   // assignint he flights json data to the component local variable
     this.handleChange = this.handleChange.bind(this);
-    
     // binding the search btn function to invoke filteration flights 
     this.filterFlights = ()=>{
       filterFlights(this, NotificationManager)
@@ -50,7 +49,8 @@ export default class SearchFlights extends Component {
   getInitialState() {
     var value = new Date().toISOString();
     return {
-      departureDate: value
+      departureDate: value,
+     
     }
   }
   handleChange(value) {
@@ -108,6 +108,7 @@ export default class SearchFlights extends Component {
                     options={this.state.availableArrivalAndDepartLocations}
                     labelField="label"
                     valueField="value"
+                    values={[]}
                     onChange={this.onFromLocationSelctionChanged}
                   />
                 </div>
@@ -126,6 +127,7 @@ export default class SearchFlights extends Component {
                     options={this.state.availableArrivalAndDepartLocations}
                     labelField="label"
                     valueField="value"
+                    values={[]}
                     onChange={this.onToLocationSelctionChanged}
                   />
                 </div>
@@ -143,11 +145,11 @@ export default class SearchFlights extends Component {
                 <div className="custom-datepicker form-control p-0">
                   <DatePicker
                     selected={this.state.departureDate}
+                    minDate={new Date()}
                     onChange={this.handleChange}
                     className="form-control p-0"
                     name="startDate"
                     dateFormat="d MMMM, yyyy"
-                    readonly
                   />
                 </div>
               </div>
@@ -170,6 +172,14 @@ export default class SearchFlights extends Component {
                 noRowsMessageFunc: () => 'No Flights Available...',
               }}
               columnDefs={getSearchFlightsGridColumns()}
+              defaultColDef= {{
+                editable: true,
+                sortable: true,
+                resizable: true,
+                filter: true,
+                flex: 1,
+                minWidth: 100}
+            }
             >
             </AgGridReact>
           </div>

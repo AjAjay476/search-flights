@@ -22,6 +22,14 @@
     padding-left: 4rem;
 }
 
+.ag-header-cell {
+    border-style: solid!important;
+    border-width: 0 0 1px 1px!important;
+    background-color: crimson;
+    color: #fff!important;
+    font-weight: 700;
+    text-align: center!important;
+  }
 
 .custom-grid{
     padding: 4rem;
@@ -36,7 +44,7 @@
 .serach-flights-btn{
     margin-top: 18px;
     /* align-items: center; */
-    margin-inline: 28rem;
+    margin-inline: auto;
     margin-bottom: -2rem;
     width:18% !important;
 }

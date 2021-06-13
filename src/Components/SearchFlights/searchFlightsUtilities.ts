@@ -92,7 +92,7 @@ export function getSearchFlightsGridColumns(): any{
     { headerName:"Departure Time", field:"takeoff"},
     { headerName:"Arrival Time", field:"landing"},
     { headerName:"Flight Duration", field:"duration"},
-    { headerName:"Ticket Price", field:"price"},
+    { headerName:"Ticket Price", field:"price", width:'50px'},
   ];
   // .reduce((intial:any, current)=>{
   //   return`${intial}<AgGridColumn headerName="${current.headerName}"
